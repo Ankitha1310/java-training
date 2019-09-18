@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+	
+function alpha(e){
+
+	if((!(65<=e.which<=90)||(!(97<=e.which<=122))))
+	//if(!((e.which>=65)&&(e.which<=90)||(e.which>=97)&&(e.which<=122)))
+	{
+		e.preventDefault();
+		alert("Only Alphabets");
+	}
+	
+}
+
+</script>
+</head>
+<body>
+
+<input type="text" name="" onkeypress="alpha(event)">
+
+</body>
+</html>
