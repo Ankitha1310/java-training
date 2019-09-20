@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Example</title>
+          <link href="./CustomStyles.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+    </script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+   
+
+<div class="container">
+
+</div>
+
+
+<style type="text/css">
+
+        img{
+            min-height:350px;
+            min-width: 350px
+        }
+    </style>
+<script src= a1.js>
+    function verify(ps,cp){
+       if( ps.value!=cp.value)
+        {
+          alert("Password dont match");
+          return false;
+        }
+      else
+        {
+          alert("Successfully submitted");
+          return true;
+        }
+    }
+</script>
+<script type="text/javascript" src="drD.js"></script>
+</head>
+<body onload="fillDD()">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1> 
+            </div>
+<div class="col-lg-12 col-md-4 col-sm-6" align="center">
+                
+                    <img src="Images/serendipity.jpg" class="img-responsive"  />
+                </a>
+            </div></h1>
+        </div>
+    </div>
+<div style="text-align: center;">
+
+<form name="f1">
+    <fieldset >
+        <legend>Welcome</legend>
+        <input type="text" name="un" placeholder="User Name" ><br>
+        <select id="type" onchange="fillTD()">
+            <option>Select</option></select>
+
+        <select id="data">
+            <option>Select</option></select>
+        </select><br>
+        <input type="text" name="ps" placeholder="Password" ><br>
+        <input type="text" name="cp" placeholder="Confirm Password" ><br>
+        <input type="date" id="dob" onclick="dobValidate()">
+        <input type="submit" value="Submit" onclick="verify(ps,cp)" >
+</fieldset>
+</form>
+
+</div>
+</div>
+</body>
+</html>
