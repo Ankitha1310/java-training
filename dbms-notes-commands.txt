@@ -1,0 +1,81 @@
+SQL> create sequence seq7
+  2  start with 10
+  3  increment by -1
+  4  maxvalue 11
+  5  minvalue 0
+  6  cycle
+  7  cache 9;
+
+Sequence created.
+
+SQL> CREATE OR REPLACE TRIGGER DATEINV
+  2  AFTER INSERT
+  3  ON EMP
+  4  FOR EACH ROW
+  5  BEGIN
+  6  IF (:NEW.DOB > SYSDATE) THEN
+  7  RAISE_APPLICATION_ERROR(-20343,'FUTURE DATE UNACCEPTABLE');
+  8  END IF;
+  9  END
+ 10  ;
+ 11  /
+
+Trigger created.
+
+SQL> CREATE OR REPLACE TRIGGER BIN
+  2  AFTER DELETE
+  3  ON EMP
+  4  FOR EACH ROW
+  5  BEGIN
+  6  INSERT INTO EMPBIN VALUES(:NEW.EMPID, :NEW.EMPNAME, :NEW.AGE, :NEW.DEPID);
+  7  END;
+  8  /
+
+SQL> CREATE OR REPLACE TRIGGER EMPBIN
+  2  AFTER DELETE
+  3  ON EMP
+  4  FOR EACH ROW
+  5  BEGIN
+  6  INSERT INTO EMPBIN VALUES(:NEW.EMPID, :NEW.EMPNAME, :NEW.AGE, :NEW.DEPID);
+  7  END;
+  8  /
+
+Trigger created.
+
+SQL> CREATE TABLE EMPBIN(
+  2  EMPID INT,
+  3  EMPNAME VARCHAR(10),
+  4  AGE INT,
+  5  DEPID INT
+  6  );
+
+Table created.
+
+SQL> CREATE OR REPLACE TRIGGER TRGEMP
+  2  AFTER INSERT
+  3  ON EMP
+  4  FOR EACH ROW
+  5  BEGIN
+  6  INSERT INTO EMPBU VALUES(:NEW.EMPID,:NEW.EMPNAME,:NEW.AGE,:NEW.DEPID);
+  7  END;
+  8  /
+
+Trigger created.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
