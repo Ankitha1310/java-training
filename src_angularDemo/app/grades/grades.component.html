@@ -1,0 +1,27 @@
+<h1>
+    <input type="text" [(ngModel)]="grades">
+
+    <div *ngIf="grades>90; else elseBlock" class="g">
+        Grade A+
+    </div>
+
+    
+<ng-template  #elseBlock >
+    
+<ng-container *ngIf="grades>40;else els2" >
+<h1 class="g">        Grade A</h1>
+</ng-container>
+
+</ng-template>
+
+
+<ng-template #els2  >
+    <ng-container *ngIf="grades<=40;else els2" class="b">
+        <p style = "color:red"> fail</p>
+    
+  </ng-container>
+</ng-template>
+
+
+
+</h1>
