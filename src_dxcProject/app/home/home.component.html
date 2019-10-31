@@ -1,0 +1,31 @@
+<div>
+  <ul>
+    <li><a class="active" href="#buy">Buy</a></li>
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Category</a>
+      <div class="dropdown-content">
+        <a href="#">Paintings</a>
+        <a href="#">Furnitures</a>
+        <a href="#">Books</a>
+      </div>
+    </li>
+    <li><a routerLink="/sell" routerLinkActive="router-link-active">Sell</a>
+    <li><a routerLink="/display" routerLinkActive="router-link-active">Display</a>
+    <li><a routerLink="/userDisplay" routerLinkActive="router-link-active">Image</a>
+    <li style="float:right"><a href="#about">Logout</a></li>
+    <li style="float:right"><a href="#viewProfile">View Profile</a></li>
+  </ul>
+</div>
+<div id="main"></div>
+<h2>Items On Bid</h2>
+<table border="2">
+    <tr *ngFor="let item of itemList">
+       <td>{{item.itemId}}</td>
+       <td>{{item.itemName}}</td>
+       <td>{{item.userId}}</td>
+       <td>{{item.desc}}</td>
+    </tr>
+
+    </table>
+
+<router-outlet></router-outlet>

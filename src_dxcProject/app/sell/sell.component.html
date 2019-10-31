@@ -1,0 +1,16 @@
+<div id="main">
+  <h1>Sell Items</h1>
+  <form (submit)="saveItem()">
+
+      <input type="text" name="itemName" [(ngModel)]="item.itemName" placeholder="Item Name"><br>
+      <input type="number" name="cost" [(ngModel)]="item.cost" placeholder="Item Cost"><br>
+      <textarea id="desc" name="desc" [(ngModel)]="item.desc" rows="3" cols="42">Item Desc... </textarea> <br>
+      <input type="file" (change)="upload1($event.target.files) " >
+      <input type="hidden" name="itemId" > <br>
+      <input type="hidden" name="userId" > <br>
+      <input type="hidden" name="status"  value="false"> <br>
+      <input class="button" type="submit" value="Submit">
+  </form>
+</div>
+
+

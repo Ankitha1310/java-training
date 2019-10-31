@@ -1,0 +1,16 @@
+<div id="main">
+  <h1>Login</h1>
+  <form>
+      <input type="text"  name="v" placeholder="UserID" [(ngModel)]="name"> <br>
+      <input type="text" name="password" placeholder="Password"> <br>
+      <input type="text" name="k" placeholder="answer" [(ngModel)]="key"> <br>
+      <a routerLink="/forgot-pass" routerLinkActive="router-link-active"> Forgot Password </a><br>
+
+      <!-- <input type="submit" name="Forgot password" (click)="forgot()">  <br> -->
+      <a class="button" routerLink="/home" routerLinkActive="router-link-active"> Login </a>
+      <a class="button button2" routerLink="/register" routerLinkActive="router-link-active"> Register </a><br>
+
+  </form>
+</div>
+<router-outlet></router-outlet>
+
